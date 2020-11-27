@@ -1,5 +1,6 @@
 ﻿using Countries.Models;
 using Countries.Repositories;
+using Countries.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,9 +40,9 @@ namespace Countries
                 // er is een board geselecteerd
                 Country selected = (Country)lvwCountries.SelectedItem;
                 // we gaan naar een andere page
-                //Navigation.PushAsync(new TrelloListPage(selected));
+                Navigation.PushAsync(new DetailPage(selected));
                 //selected item deselecteren
-                //lvwBoards.SelectedItem = null;
+                lvwCountries.SelectedItem = null;
             }
         }
     }

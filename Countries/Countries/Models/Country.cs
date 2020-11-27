@@ -13,14 +13,14 @@ namespace Countries.Models
         public String Capital { get; set; }
         [JsonProperty(PropertyName = "region")]
         public String Region { get; set; }
-        //[JsonProperty(PropertyName = "subregion")]
-        //public String Subregion { get; set; }
-        //[JsonProperty(PropertyName = "population")]
-        //public int Population { get; set; }
-        //[JsonProperty(PropertyName = "lating")]
-        //public float Lating { get; set; }
-        ////[JsonProperty(PropertyName = "timezones")]
-        ////public String Timezones { get; set; }
+        [JsonProperty(PropertyName = "subregion")]
+        public String Subregion { get; set; }
+        [JsonProperty(PropertyName = "population")]
+        public int Population { get; set; }
+        [JsonProperty(PropertyName = "lating")]
+        public float Lating { get; set; }
+        //[JsonProperty(PropertyName = "timezones")]
+        //public String Timezones { get; set; }
         //[JsonProperty(PropertyName = "borders")]
         //public String Borders { get; set; }
         //[JsonProperty(PropertyName = "currencies")]

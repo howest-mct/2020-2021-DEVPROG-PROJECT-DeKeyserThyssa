@@ -2,11 +2,148 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Countries.Views.DetailPage">
+
+
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ListView x:Name="lvwCountry" SeparatorColor="Black">
+            <!--ItemSelected="lvwCountry_ItemSelected"--> 
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <!--<RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>-->
+                            </Grid.RowDefinitions>
+                            <Frame Grid.Row="1" BackgroundColor="WhiteSmoke" Margin="8" Padding="8,0">
+                                <Grid>
+                                    <Label Text="Name" TextColor="Black" VerticalOptions="Center" />
+                                    <Label Text="{Binding Name}" TextColor="Gray" VerticalOptions="Center" HorizontalOptions="End" />
+                                </Grid>
+                            </Frame>
+                            <Frame Grid.Row="2" BackgroundColor="WhiteSmoke" Margin="8" Padding="8,0">
+                                <Grid>
+                                    <Label Text="Capital" TextColor="Black" VerticalOptions="Center" />
+                                    <Label Text="{Binding Capital}" TextColor="Gray" VerticalOptions="Center" HorizontalOptions="End" />
+                                </Grid>
+                            </Frame>
+                        </Grid>
+                        <!--<Label Text="Name" Style="{StaticResource TitleLabelStyle}" />
+                        <Label x:Name="lblName" Style="{StaticResource DetailLabelStyle}" />-->
+                        <!--<Label Text="{Binding Name}" FontSize="Large" TextColor="Black" HorizontalOptions="CenterAndExpand"/>
+                        <Label Text="{Binding Capital}" TextColor="Black" VerticalOptions="Center" />-->
+                        
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </ContentPage.Content>
+
+    <!--<ContentPage.Content>
+        <StackLayout BackgroundColor="White" Orientation="Vertical">
+            --><!--the 'resources' part contains styles for the controls inside the stacklayout-->
+            <!--you can COLLAPSE it for better readability of the rest using the '-' sign on the left--><!--
+            <StackLayout.Resources>
+                <ResourceDictionary>
+                    <Style TargetType="{x:Type Grid}">
+                        <Setter Property="HeightRequest" Value="50" />
+                    </Style>
+                    <Style TargetType="{x:Type Label}" x:Key="TitleLabelStyle">
+                        <Setter Property="TextColor" Value="Black" />
+                        <Setter Property="FontAttributes" Value="Bold" />
+                        <Setter Property="VerticalOptions" Value="Center" />
+                        <Setter Property="Margin" Value="16,0,0,0" />
+                    </Style>
+                    <Style TargetType="{x:Type Label}" x:Key="DetailLabelStyle">
+                        <Setter Property="TextColor" Value="Black" />
+                        <Setter Property="FontAttributes" Value="Bold" />
+                        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                        <Setter Property="HorizontalOptions" Value="EndAndExpand" />
+                        <Setter Property="Margin" Value="0,0,16,0" />
+                    </Style>
+                </ResourceDictionary>
+            </StackLayout.Resources>
+            --><!--Grid for the name (style/layout is defined in resources above)--><!--
+            <Grid>
+                <Label Text="Name" Style="{StaticResource TitleLabelStyle}" />
+                <Label x:Name="lblName" Style="{StaticResource DetailLabelStyle}" />
+            </Grid>
+            <BoxView Color="Black" HeightRequest="1" />
+            --><!--separator line-->
+
+            <!--Grid for the occupation (style/layout is defined in resources above)--><!--
+            <Grid>
+                <Label Text="Capital" Style="{StaticResource TitleLabelStyle}" />
+                <Label x:Name="lblCapital" Style="{StaticResource DetailLabelStyle}" />
+            </Grid>
+            <BoxView Color="Black" HeightRequest="1" />
+            --><!--separator line--><!--
+
+            <Grid>
+                <Label Text="Region" Style="{StaticResource TitleLabelStyle}" />
+                <Label x:Name="lblRegion" Style="{StaticResource DetailLabelStyle}" />
+            </Grid>
+            <BoxView Color="Black" HeightRequest="1" />
+            --><!--separator line--><!--
+
+            <Grid>
+                <Label Text="Subregion" Style="{StaticResource TitleLabelStyle}" />
+                <Label x:Name="lblSubregion" Style="{StaticResource DetailLabelStyle}" />
+            </Grid>
+            <BoxView Color="Black" HeightRequest="1" />
+            --><!--separator line--><!--
+
+            <Grid>
+                <Label Text="Population" Style="{StaticResource TitleLabelStyle}" />
+                <Label x:Name="lblPopulation" Style="{StaticResource DetailLabelStyle}" />
+            </Grid>
+            <BoxView Color="Black" HeightRequest="1" />
+            --><!--separator line--><!--
+
+            <Grid>
+                <Label Text="Lating" Style="{StaticResource TitleLabelStyle}" />
+                <Label x:Name="lblLating" Style="{StaticResource DetailLabelStyle}" />
+            </Grid>
+            <BoxView Color="Black" HeightRequest="1" />
+            separator line
+
+            <Grid>
+                <Label Text="Timezones" Style="{StaticResource TitleLabelStyle}" />
+                <Label x:Name="lblTimezones" Style="{StaticResource DetailLabelStyle}" />
+            </Grid>
+            <BoxView Color="Black" HeightRequest="1" />
+            separator line
+
+            <Grid>
+                <Label Text="Borders" Style="{StaticResource TitleLabelStyle}" />
+                <Label x:Name="lblBorders" Style="{StaticResource DetailLabelStyle}" />
+            </Grid>
+            <BoxView Color="Black" HeightRequest="1" />
+            separator line
+
+            <Grid>
+                <Label Text="Currencies" Style="{StaticResource TitleLabelStyle}" />
+                <Label x:Name="lblCurrencies" Style="{StaticResource DetailLabelStyle}" />
+            </Grid>
+            <BoxView Color="Black" HeightRequest="1" />
+            separator line
+
+            <Grid>
+                <Label Text="Languages" Style="{StaticResource TitleLabelStyle}" />
+                <Label x:Name="lblLanguages" Style="{StaticResource DetailLabelStyle}" />
+            </Grid>
+            <BoxView Color="Black" HeightRequest="1" />
+            separator line
+        </StackLayout>
+    </ContentPage.Content>-->
+
 </ContentPage>

@@ -43,6 +43,28 @@ namespace Countries.Repositories
         }
 
 
+        //2: Voor één Country de Details gaan opvragen
+        public static async Task<List<Country>> GetCountry(String name)
+        {
+            //HttpClient nodig --> tussenpersoon die de API-call verzort
+            using (HttpClient client = await GetClient())
+            {
+                string url = "https://restcountries.eu/rest/v2/name/{name}";
+                string json = await client.GetStringAsync(url);
+                if (json != null)
+                {
+                    //json --> List<Country>
+                    List<Country> country = JsonConvert.DeserializeObject<List<Country>>(json);
+                    return country;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
+
+
 
         //public async static Task<List<Country>> GetListsAsync(string region)
         //{
