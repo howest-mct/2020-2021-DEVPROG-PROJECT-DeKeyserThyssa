@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,16 +7,27 @@ namespace Countries.Models
 {
     public class Country
     {
+        [JsonProperty(PropertyName = "name")]
         public String Name { get; set; }
+        [JsonProperty(PropertyName = "capital")]
         public String Capital { get; set; }
+        [JsonProperty(PropertyName = "region")]
         public String Region { get; set; }
-        public String Subregion { get; set; }
-        public int Population { get; set; }
-        public float Lating { get; set; }
-        public String Timezones { get; set; }
-        public String Borders { get; set; }
-        public String Currencies { get; set; }
-        public String Languages { get; set; }
-        public object Flag { get; set; }
+        //[JsonProperty(PropertyName = "subregion")]
+        //public String Subregion { get; set; }
+        //[JsonProperty(PropertyName = "population")]
+        //public int Population { get; set; }
+        //[JsonProperty(PropertyName = "lating")]
+        //public float Lating { get; set; }
+        ////[JsonProperty(PropertyName = "timezones")]
+        ////public String Timezones { get; set; }
+        //[JsonProperty(PropertyName = "borders")]
+        //public String Borders { get; set; }
+        //[JsonProperty(PropertyName = "currencies")]
+        //public String Currencies { get; set; }
+        //[JsonProperty(PropertyName = "languages")]
+        //public String Languages { get; set; }
+        //[JsonProperty(PropertyName = "flag")]
+        //public object Flag { get; set; }
     }
 }

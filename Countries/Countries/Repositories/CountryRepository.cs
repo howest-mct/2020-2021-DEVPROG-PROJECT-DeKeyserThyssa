@@ -21,13 +21,13 @@ namespace Countries.Repositories
         //API gaan communiceren
         // https://restcountries.eu/rest/v2/
 
-        //1:
+        //1: alle countries opvragen
         public async static Task<List<Country>> GetAllCountries()
         {
             //HttpClient nodig --> tussenpersoon die de API-call verzort
             using (HttpClient client = await GetClient())
             {
-                string url = "https://restcountries.eu/rest/v2/all";
+                string url = ("https://restcountries.eu/rest/v2/all");
                 string json = await client.GetStringAsync(url);
                 if (json != null)
                 {
