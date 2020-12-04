@@ -30,13 +30,5 @@ namespace Countries.Models
         //[JsonProperty(PropertyName = "flag")]
         [JsonProperty(PropertyName = "alpha3Code")]
         public String ImgCode { get; set; }
-
-        public String ImageFlag
-        {
-            get
-            {
-                return "https://restcountries.eu/data/" + ImgCode.ToLower() + ".svg";
-            }
-        }
     }
 }

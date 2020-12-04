@@ -72,7 +72,7 @@
                     </Style>
                 </ResourceDictionary>
             </StackLayout.Resources>
-            <Image x:Name="ImageFlag" Margin="70" HeightRequest="140" WidthRequest="140" VerticalOptions="Start" />
+            <Image x:Name="ImageFlag" Source="" Margin="70" HeightRequest="140" WidthRequest="140" VerticalOptions="Start" />
             <!--Grid for the name (style/layout is defined in resources above)-->
             <Grid>
                 <Label Text="Name" Style="{StaticResource TitleLabelStyle}" />
@@ -136,13 +136,13 @@
                 <Label x:Name="lblCurrencies" Style="{StaticResource DetailLabelStyle}" />
             </Grid>
             <BoxView Color="Black" HeightRequest="1" />-->
-            <!--separator line--><!--
+            <!--separator line-->
 
             <Grid>
                 <Label Text="Languages" Style="{StaticResource TitleLabelStyle}" />
                 <Label x:Name="lblLanguages" Style="{StaticResource DetailLabelStyle}" />
             </Grid>
-            <BoxView Color="Black" HeightRequest="1" />-->
+            <BoxView Color="Black" HeightRequest="1" />
             <!--separator line-->
         </StackLayout>
     </ContentPage.Content>

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Diagnostics;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,13 +15,15 @@ namespace Countries.Views
     {
         //property aanmaken waar het object van de klasse gaan bijhouden
         public Country DetailCountry { get; set; }
+        public LanguageCountry Language { get; set; }
         //via de ctor geven de guest door 
 
-        public DetailPage(Country country)
+        public DetailPage(Country country, LanguageCountry languages)
         {
             InitializeComponent();
             //property gaan instellen
             this.DetailCountry = country;
+            this.Language = languages;
             ShowDetails();
         }
 
@@ -38,9 +40,14 @@ namespace Countries.Views
             //lblBorders.Text = DetailCountry.Borders;
             lblBorders.Text = string.Join(",", DetailCountry.Borders);
             //lblCurrencies.Text = DetailCountry.Currencies;
-            //lblLanguages.Text = DetailCountry.Languages;
-            ImageFlag.Source = DetailCountry.ImageFlag;
-            ImageFlag.Source = ImageSource.FromResource(DetailCountry.ImageFlag);
+            lblLanguages.Text = Language.Name;
+            var flag_url = "https://restcountries.eu/data/" + DetailCountry.ImgCode.ToLower() + ".svg";
+            Debug.WriteLine(flag_url);
+
+            ImageFlag.Source = flag_url;
+
+            //ImageFlag.Source = DetailCountry.ImgCode;
+            //ImageFlag.Source = ImageSource.FromResource(DetailCountry.ImageFlag);
         }
 
 
