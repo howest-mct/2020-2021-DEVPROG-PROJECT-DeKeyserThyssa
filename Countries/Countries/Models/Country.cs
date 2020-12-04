@@ -19,15 +19,24 @@ namespace Countries.Models
         public int Population { get; set; }
         [JsonProperty(PropertyName = "lating")]
         public float Lating { get; set; }
-        //[JsonProperty(PropertyName = "timezones")]
-        //public String Timezones { get; set; }
-        //[JsonProperty(PropertyName = "borders")]
-        //public String Borders { get; set; }
+        [JsonProperty(PropertyName = "timezones")]
+        public List<String> Timezones { get; set; }
+        [JsonProperty(PropertyName = "borders")]
+        public List <String> Borders { get; set; }
         //[JsonProperty(PropertyName = "currencies")]
         //public String Currencies { get; set; }
         //[JsonProperty(PropertyName = "languages")]
         //public String Languages { get; set; }
         //[JsonProperty(PropertyName = "flag")]
-        //public object Flag { get; set; }
+        [JsonProperty(PropertyName = "alpha3Code")]
+        public String ImgCode { get; set; }
+
+        public String ImageFlag
+        {
+            get
+            {
+                return "https://restcountries.eu/data/" + ImgCode.ToLower() + ".svg";
+            }
+        }
     }
 }
