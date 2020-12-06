@@ -9,7 +9,7 @@ namespace Countries.Models
     {
         [JsonProperty(PropertyName = "name")]
         public String Name { get; set; }
-        [JsonProperty(PropertyName = "NativeName")]
+        [JsonProperty(PropertyName = "nativeName")]
         public String NativeName { get; set; }
     }
 }

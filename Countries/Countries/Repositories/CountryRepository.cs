@@ -86,26 +86,5 @@ namespace Countries.Repositories
             }
         }
 
-
-
-        //public async static Task<List<Country>> GetListsAsync(string region)
-        //{
-        //    //HttpClient nodig --> tussenpersoon die de API-call verzort
-        //    using (HttpClient client = await GetClient())
-        //    {
-        //        string url = "https://restcountries.eu/rest/v2/name/belgium";
-        //        string json = await client.GetStringAsync(url);
-        //        if (json != null)
-        //        {
-        //            //json --> List<Country>
-        //            List<Country> countries = JsonConvert.DeserializeObject<List<Country>>(json);
-        //            return countries;
-        //        }
-        //        else
-        //        {
-        //            return null;
-        //        }
-        //    }
-        //}
     }
 }
