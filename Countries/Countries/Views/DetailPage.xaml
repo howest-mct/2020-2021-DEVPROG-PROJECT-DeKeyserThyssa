@@ -131,11 +131,11 @@
             <BoxView Color="Black" HeightRequest="1" />
             <!--separator line-->
 
-            <!--<Grid>
+            <Grid>
                 <Label Text="Currencies" Style="{StaticResource TitleLabelStyle}" />
                 <Label x:Name="lblCurrencies" Style="{StaticResource DetailLabelStyle}" />
             </Grid>
-            <BoxView Color="Black" HeightRequest="1" />-->
+            <BoxView Color="Black" HeightRequest="1" />
             <!--separator line-->
 
             <Grid>

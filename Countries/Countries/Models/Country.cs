@@ -27,7 +27,6 @@ namespace Countries.Models
         //public String Currencies { get; set; }
         //[JsonProperty(PropertyName = "languages")]
         //public String Languages { get; set; }
-        //[JsonProperty(PropertyName = "flag")]
         [JsonProperty(PropertyName = "alpha3Code")]
         public String ImgCode { get; set; }
     }

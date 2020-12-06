@@ -54,8 +54,8 @@ namespace Countries.Repositories
                 if (json != null)
                 {
                     //json --> List<Country>
-                    List<Country> country = JsonConvert.DeserializeObject<List<Country>>(json);
-                    return country;
+                    List<Country> countryName = JsonConvert.DeserializeObject<List<Country>>(json);
+                    return countryName;
                 }
                 else
                 {
@@ -66,7 +66,7 @@ namespace Countries.Repositories
 
 
         //3: Language opvragen
-        public static async Task<List<LanguageCountry>> GetLanguage(String name)
+        public static async Task<List<LanguageCountry>> GetLanguages(String name)
         {
             //HttpClient nodig --> tussenpersoon die de API-call verzort
             using (HttpClient client = await GetClient())
@@ -78,6 +78,27 @@ namespace Countries.Repositories
                     //json --> List<Country>
                     List<LanguageCountry> languages = JsonConvert.DeserializeObject<List<LanguageCountry>>(json);
                     return languages;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
+
+        //4: Currency opvragen
+        public static async Task<List<CurrencyCountry>> GetCurrencies(String name)
+        {
+            //HttpClient nodig --> tussenpersoon die de API-call verzort
+            using (HttpClient client = await GetClient())
+            {
+                string url = "https://restcountries.eu/rest/v2/name/{name}";
+                string json = await client.GetStringAsync(url);
+                if (json != null)
+                {
+                    //json --> List<Country>
+                    List<CurrencyCountry> currencies = JsonConvert.DeserializeObject<List<CurrencyCountry>>(json);
+                    return currencies;
                 }
                 else
                 {
