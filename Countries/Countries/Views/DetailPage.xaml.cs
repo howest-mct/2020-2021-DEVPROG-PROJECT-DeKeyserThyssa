@@ -14,11 +14,7 @@ namespace Countries.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DetailPage : ContentPage
     {
-        //property aanmaken waar het object van de klasse gaan bijhouden
         public Country DetailCountry { get; set; }
-
-        //public LanguageCountry DetailLanguage { get; set; }
-        //via de ctor geven de guest door 
 
         public DetailPage(Country countryName)
         {
@@ -35,16 +31,18 @@ namespace Countries.Views
             lblRegion.Text = DetailCountry.Region;
             lblSubregion.Text = DetailCountry.Subregion;
             lblPopulation.Text = DetailCountry.Population.ToString();
-            lblLating.Text = DetailCountry.Lating.ToString();
-            lblTimezones.Text = String.Join(",", DetailCountry.Timezones);
-            lblBorders.Text = String.Join(",", DetailCountry.Borders);
-            //lblCurrencies.Text = DetailCountry.Currencies;
-            LanguageCountry languages = await CountryRepository.GetLanguages(DetailCountry.Name);
-            lblLanguages.Text = languages.Name;
-            var flag_url = "https://restcountries.eu/data/" + DetailCountry.ImgCode.ToLower() + ".svg";
-            Debug.WriteLine(flag_url);
+            lblLating.Text = String.Join(" / ", DetailCountry.Lating);
+            lblTimezones.Text = String.Join(", ", DetailCountry.Timezones);
+            lblBorders.Text = String.Join(", ", DetailCountry.Borders);
+            lblLanguages.Text = String.Join(", ", DetailCountry.LanguageName);
+            //CurrencyCountry currencies = await CountryRepository.GetCurrencies(DetailCountry.Name);
+            //lblCurrencies.Text = currencies.Symbol;
+            //LanguageCountry languages = await CountryRepository.GetLanguages(DetailCountry.Name);
+            //lblLanguages.Text = String.Join(",", languages.Name);
+            //var flag_url = "https://restcountries.eu/data/" + DetailCountry.ImgCode.ToLower() + ".svg";
+            //Debug.WriteLine(flag_url);
 
-            ImageFlag.Source = flag_url;
+            //ImageFlag.Source = flag_url;
 
         }
     }

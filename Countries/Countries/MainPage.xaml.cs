@@ -29,7 +29,7 @@ namespace Countries
         private async void TestModels()
         {
             Debug.WriteLine("Test models");
-            List<Country> countries = await CountryRepository.GetAllCountries(); // als je await gebruik moet je async vanboven zetten
+            List<Country> countries = await CountryRepository.GetAllCountries();
             Debug.WriteLine("Count Countries: " + countries.Count);
         }
 
@@ -37,11 +37,8 @@ namespace Countries
         {
             if (lvwCountries.SelectedItem != null)
             {
-                // er is een board geselecteerd
                 Country selected = (Country)lvwCountries.SelectedItem;
-                // we gaan naar een andere page
                 Navigation.PushAsync(new DetailPage(selected));
-                //selected item deselecteren
                 lvwCountries.SelectedItem = null;
             }
         }

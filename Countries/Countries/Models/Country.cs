@@ -17,17 +17,20 @@ namespace Countries.Models
         public String Subregion { get; set; }
         [JsonProperty(PropertyName = "population")]
         public int Population { get; set; }
-        [JsonProperty(PropertyName = "lating")]
-        public float Lating { get; set; }
+        [JsonProperty(PropertyName = "latlng")]
+        public List<decimal> Lating { get; set; }
         [JsonProperty(PropertyName = "timezones")]
         public List<String> Timezones { get; set; }
         [JsonProperty(PropertyName = "borders")]
-        public List <String> Borders { get; set; }
+        public List<String> Borders { get; set; }
         //[JsonProperty(PropertyName = "currencies")]
         //public String Currencies { get; set; }
         //[JsonProperty(PropertyName = "languages")]
-        //public String Languages { get; set; }
+        //public List<String> Languages { get; set; }
         [JsonProperty(PropertyName = "alpha3Code")]
         public String ImgCode { get; set; }
+
+        public List<LanguageCountry> LanguageName { get; set; }
+
     }
 }

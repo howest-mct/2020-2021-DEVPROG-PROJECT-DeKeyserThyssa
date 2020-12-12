@@ -24,14 +24,12 @@ namespace Countries.Repositories
         //1: alle countries opvragen
         public async static Task<List<Country>> GetAllCountries()
         {
-            //HttpClient nodig --> tussenpersoon die de API-call verzort
             using (HttpClient client = await GetClient())
             {
                 string url = ("https://restcountries.eu/rest/v2/all");
                 string json = await client.GetStringAsync(url);
                 if (json != null)
                 {
-                    //json --> List<Country>
                     List<Country> countries = JsonConvert.DeserializeObject<List<Country>>(json);
                     return countries;
                 }
@@ -46,14 +44,12 @@ namespace Countries.Repositories
         //2: Voor één Country de Details gaan opvragen
         public static async Task<List<Country>> GetCountry(String name)
         {
-            //HttpClient nodig --> tussenpersoon die de API-call verzort
             using (HttpClient client = await GetClient())
             {
                 string url = "https://restcountries.eu/rest/v2/name/{name}";
                 string json = await client.GetStringAsync(url);
                 if (json != null)
                 {
-                    //json --> List<Country>
                     List<Country> countryName = JsonConvert.DeserializeObject<List<Country>>(json);
                     return countryName;
                 }
@@ -66,18 +62,16 @@ namespace Countries.Repositories
 
 
         //3: Language opvragen
-        public static async Task<List<LanguageCountry>> GetLanguages(String name)
+        public static async Task<LanguageCountry> GetLanguages(String name)
         {
-            //HttpClient nodig --> tussenpersoon die de API-call verzort
             using (HttpClient client = await GetClient())
             {
                 string url = "https://restcountries.eu/rest/v2/name/{name}";
                 string json = await client.GetStringAsync(url);
                 if (json != null)
                 {
-                    //json --> List<Country>
-                    List<LanguageCountry> languages = JsonConvert.DeserializeObject<List<LanguageCountry>>(json);
-                    return languages;
+                    LanguageCountry language = JsonConvert.DeserializeObject<LanguageCountry>(json);
+                    return language;
                 }
                 else
                 {
@@ -86,26 +80,26 @@ namespace Countries.Repositories
             }
         }
 
-        //4: Currency opvragen
-        public static async Task<List<CurrencyCountry>> GetCurrencies(String name)
-        {
-            //HttpClient nodig --> tussenpersoon die de API-call verzort
-            using (HttpClient client = await GetClient())
-            {
-                string url = "https://restcountries.eu/rest/v2/name/{name}";
-                string json = await client.GetStringAsync(url);
-                if (json != null)
-                {
-                    //json --> List<Country>
-                    List<CurrencyCountry> currencies = JsonConvert.DeserializeObject<List<CurrencyCountry>>(json);
-                    return currencies;
-                }
-                else
-                {
-                    return null;
-                }
-            }
-        }
+        ////4: Currency opvragen
+        //public static async Task<CurrencyCountry> GetCurrencies(String name)
+        //{
+        //    //HttpClient nodig --> tussenpersoon die de API-call verzort
+        //    using (HttpClient client = await GetClient())
+        //    {
+        //        string url = "https://restcountries.eu/rest/v2/name/{name}";
+        //        string json = await client.GetStringAsync(url);
+        //        if (json != null)
+        //        {
+        //            //json --> List<Country>
+        //            CurrencyCountry currencies = JsonConvert.DeserializeObject<CurrencyCountry>(json);
+        //            return currencies;
+        //        }
+        //        else
+        //        {
+        //            return null;
+        //        }
+        //    }
+        //}
 
     }
 }
