@@ -17,8 +17,12 @@ namespace Countries
         public MainPage()
         {
             InitializeComponent();
-            TestModels();
+            //TestModels();
             LoadCountries();
+
+            TapGestureRecognizer tapGestureRecognizer = new TapGestureRecognizer();
+            tapGestureRecognizer.Tapped += TapGestureRecognizer_Tapped;
+            frmFilter.GestureRecognizers.Add(tapGestureRecognizer);
         }
 
         private async void LoadCountries()
@@ -41,6 +45,11 @@ namespace Countries
                 Navigation.PushAsync(new DetailPage(selected));
                 lvwCountries.SelectedItem = null;
             }
+        }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new FilterPage());
         }
     }
 }

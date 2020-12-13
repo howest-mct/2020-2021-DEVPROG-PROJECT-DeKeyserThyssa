@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Countries.Views.FilterPage">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="AliceBlue" Padding="30 " >
+            <Label Text="Please select your Region" FontSize="16" FontAttributes="Bold" />
+            <Picker x:Name="pkrRegions" ItemDisplayBinding="{Binding Name}" Title="Region"/>
+            <Button Text="Search countries" Pressed="Button_OnPressed"></Button>
+            <Frame x:Name="frmAllCountries" Grid.Row="0" Padding="10" Margin="0" OutlineColor="DarkSlateBlue" BackgroundColor="AliceBlue">
+                <Label Text="Get all countries" TextColor="DarkSlateBlue" FontSize="Large" FontAttributes="Bold" VerticalOptions="Center" Margin="5,0" />
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -11,6 +11,7 @@ namespace Countries.Models
     {
         [JsonProperty(PropertyName = "name")]
         public String LanguageName { get; set; }
+
         [JsonProperty(PropertyName = "nativeName")]
         public String NativeName { get; set; }
 

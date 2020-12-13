@@ -8,10 +8,14 @@
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30"/>
+                    <RowDefinition Height="50"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <Label Grid.Row="1" Text="All countries" FontSize="Large" TextColor="DarkSlateBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                <ListView Grid.Row="2" x:Name="lvwCountries" SeparatorColor="Black" ItemSelected="lvwCountries_ItemSelected" >
+                <!--<Frame x:Name="frmFilter" Grid.Row="2" Padding="10" Margin="0" OutlineColor="DarkSlateBlue" BackgroundColor="AliceBlue">
+                    <Label Text="Filter by region" TextColor="DarkSlateBlue" FontSize="Large" FontAttributes="Bold" VerticalOptions="Center" Margin="5,0" />
+                </Frame>-->
+                <ListView Grid.Row="3" x:Name="lvwCountries" SeparatorColor="Black" ItemSelected="lvwCountries_ItemSelected" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -20,8 +24,13 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
+                <!--<Frame x:Name="frmFilter" Grid.Row="0" Padding="0" Margin="1" OutlineColor="DarkSlateBlue">
+                    <Label Text="Filter by Region" TextColor="DarkSlateBlue" FontSize="Large" FontAttributes="Bold" VerticalOptions="Center" Margin="16,0" />
+                </Frame>-->
+                <Frame x:Name="frmFilter" Grid.Row="2" Padding="10" Margin="10" OutlineColor="DarkSlateBlue" BackgroundColor="AliceBlue">
+                    <Label Text="Filter by region" TextColor="DarkSlateBlue" FontSize="Medium" FontAttributes="Bold" VerticalOptions="Center" Margin="5,0" />
+                </Frame>
             </Grid>
         </StackLayout>
     </ContentPage.Content>
-
 </ContentPage>

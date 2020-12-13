@@ -101,5 +101,23 @@ namespace Countries.Repositories
         //    }
         //}
 
+        //5: Region opvragen
+        public static async Task<Country> GetRegion()
+        {
+            using (HttpClient client = await GetClient())
+            {
+                string url = "https://restcountries.eu/rest/v2/all?fields=region";
+                string json = await client.GetStringAsync(url);
+                if (json != null)
+                {
+                    Country regionName = JsonConvert.DeserializeObject<Country>(json);
+                    return regionName;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
     }
 }

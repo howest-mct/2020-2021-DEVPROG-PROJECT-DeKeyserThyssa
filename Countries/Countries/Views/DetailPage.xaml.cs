@@ -34,7 +34,17 @@ namespace Countries.Views
             lblLating.Text = String.Join(" / ", DetailCountry.Lating);
             lblTimezones.Text = String.Join(", ", DetailCountry.Timezones);
             lblBorders.Text = String.Join(", ", DetailCountry.Borders);
-            lblLanguages.Text = String.Join(", ", DetailCountry.LanguageName);
+
+            //if (DetailCountry.LanguageName == "")
+            //{
+            //    DetailCountry.LanguageName = "Unknown";
+            //    lblLanguages.Text = String.Join(", ", DetailCountry.LanguageName);
+            //}
+            //else
+            //{
+            //    lblLanguages.Text = String.Join(", ", DetailCountry.LanguageName);
+            //}
+            //lblLanguages.Text = String.Join(", ", DetailCountry.LanguageName);
             //CurrencyCountry currencies = await CountryRepository.GetCurrencies(DetailCountry.Name);
             //lblCurrencies.Text = currencies.Symbol;
             //LanguageCountry languages = await CountryRepository.GetLanguages(DetailCountry.Name);

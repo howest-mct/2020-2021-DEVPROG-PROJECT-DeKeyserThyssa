@@ -13,3 +13,5 @@ C:\DP\Project\2020-2021-DEVPROG-PROJECT-DeKeyserThyssa\Countries\Countries\obj\D
 C:\DP\Project\2020-2021-DEVPROG-PROJECT-DeKeyserThyssa\Countries\Countries\obj\Debug\netstandard2.0\Views\DetailPage.xaml.g.cs
 C:\DP\Project\2020-2021-DEVPROG-PROJECT-DeKeyserThyssa\Countries\Countries\obj\Debug\netstandard2.0\Countries.csproj.CoreCompileInputs.cache
 C:\DP\Project\2020-2021-DEVPROG-PROJECT-DeKeyserThyssa\Countries\Countries\obj\Debug\netstandard2.0\XamlC.stamp
+C:\DP\Project\2020-2021-DEVPROG-PROJECT-DeKeyserThyssa\Countries\Countries\obj\Debug\netstandard2.0\Views\FilterPage.xaml.g.cs
+C:\DP\Project\2020-2021-DEVPROG-PROJECT-DeKeyserThyssa\Countries\Countries\obj\Debug\netstandard2.0\Views\ResultPage.xaml.g.cs

@@ -32,5 +32,20 @@ namespace Countries.Models
 
         public List<LanguageCountry> LanguageName { get; set; }
 
+        //public String AllLanguages
+        //{
+        //    get
+        //    {
+        //        if (LanguageName.Count >= 0)
+        //        {
+        //            return LanguageName[0];
+        //        }
+        //        else
+        //        {
+        //            return "No Languages!";
+        //        }
+        //    }
+        //}
+
     }
 }
