@@ -13,9 +13,9 @@ namespace Countries.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ResultPage : ContentPage
     {
-        public RegionCountry DetailRegion { get; set; }
+        public Country DetailRegion { get; set; }
 
-        public ResultPage(RegionCountry countryRegion)
+        public ResultPage(Country countryRegion)
         {
             InitializeComponent();
             this.DetailRegion = countryRegion;
@@ -26,7 +26,7 @@ namespace Countries.Views
 
         private void ShowCountries()
         {
-            lblRegionName.Text = DetailRegion.Name;
+            lblRegionName.Text = DetailRegion.Region;
             //lblCountryName.Text = DetailRegion.Name;
 
         }

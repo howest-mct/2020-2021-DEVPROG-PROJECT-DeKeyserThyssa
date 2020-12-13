@@ -10,8 +10,13 @@ namespace Countries.Models
         [JsonProperty(PropertyName = "code")]
         public String Code { get; set; }
         [JsonProperty(PropertyName = "name")]
-        public String Name { get; set; }
+        public String CurrencyName { get; set; }
         [JsonProperty(PropertyName = "symbol")]
         public String Symbol { get; set; }
+
+        //public int CompareTo(CurrencyCountry other)
+        //{
+        //    return CurrencyCountry.CompareTo(other.Code);
+        //}
     }
 }

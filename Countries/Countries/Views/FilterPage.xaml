@@ -5,7 +5,7 @@
     <ContentPage.Content>
         <StackLayout BackgroundColor="AliceBlue" Padding="30 " >
             <Label Text="Please select your Region" FontSize="16" FontAttributes="Bold" />
-            <Picker x:Name="pkrRegions" ItemDisplayBinding="{Binding Name}" Title="Region"/>
+            <Picker x:Name="pkrRegions" ItemDisplayBinding="{Binding Region}" Title="Region"/>
             <Button Text="Search countries" Pressed="Button_OnPressed"></Button>
             <Frame x:Name="frmAllCountries" Grid.Row="0" Padding="10" Margin="0" OutlineColor="DarkSlateBlue" BackgroundColor="AliceBlue">
                 <Label Text="Get all countries" TextColor="DarkSlateBlue" FontSize="Large" FontAttributes="Bold" VerticalOptions="Center" Margin="5,0" />

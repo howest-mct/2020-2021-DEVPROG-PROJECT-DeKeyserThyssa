@@ -80,26 +80,25 @@ namespace Countries.Repositories
             }
         }
 
-        ////4: Currency opvragen
-        //public static async Task<CurrencyCountry> GetCurrencies(String name)
-        //{
-        //    //HttpClient nodig --> tussenpersoon die de API-call verzort
-        //    using (HttpClient client = await GetClient())
-        //    {
-        //        string url = "https://restcountries.eu/rest/v2/name/{name}";
-        //        string json = await client.GetStringAsync(url);
-        //        if (json != null)
-        //        {
-        //            //json --> List<Country>
-        //            CurrencyCountry currencies = JsonConvert.DeserializeObject<CurrencyCountry>(json);
-        //            return currencies;
-        //        }
-        //        else
-        //        {
-        //            return null;
-        //        }
-        //    }
-        //}
+        //4: Currency opvragen
+        public static async Task<CurrencyCountry> GetCurrencies(String name)
+        {
+            //HttpClient nodig --> tussenpersoon die de API-call verzort
+            using (HttpClient client = await GetClient())
+            {
+                string url = "https://restcountries.eu/rest/v2/name/{name}";
+                string json = await client.GetStringAsync(url);
+                if (json != null)
+                {
+                    CurrencyCountry currencies = JsonConvert.DeserializeObject<CurrencyCountry>(json);
+                    return currencies;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
 
         //5: Region opvragen
         public static async Task<Country> GetRegion()

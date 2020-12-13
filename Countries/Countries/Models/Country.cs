@@ -32,6 +32,8 @@ namespace Countries.Models
 
         public List<LanguageCountry> LanguageName { get; set; }
 
+        //public List<CurrencyCountry> Code { get; set; }
+
         //public String AllLanguages
         //{
         //    get

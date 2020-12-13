@@ -32,8 +32,8 @@ namespace Countries.Views
         {
             if (pkrRegions.SelectedItem != null)
             {
-                RegionCountry selectedCountry = (RegionCountry)pkrRegions.SelectedItem;
-                Navigation.PushAsync(new ResultPage(selectedCountry));
+                Country selectedCountry = (Country)pkrRegions.SelectedItem;
+                await Navigation.PushAsync(new ResultPage(selectedCountry));
                 pkrRegions.SelectedItem = null;
                 //await Navigation.PushAsync(new ResultPage((RegionCountry)pkrRegions.ItemsSource[pkrRegions.SelectedIndex]));
             }
