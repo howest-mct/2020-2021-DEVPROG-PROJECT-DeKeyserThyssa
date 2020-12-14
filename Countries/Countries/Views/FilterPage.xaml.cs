@@ -26,16 +26,15 @@ namespace Countries.Views
 
         private async Task Filter()
         {
-            pkrRegions.ItemsSource = (System.Collections.IList)await CountryRepository.GetRegion();
+            RegionGroup regionGroup = await CountryRepository.GetRegion();
+            regionGroup.RegionFilter.Sort();
+            pkrRegions.ItemsSource = regionGroup.RegionFilter;
         }
         private async void Button_OnPressed(object sender, EventArgs e)
         {
             if (pkrRegions.SelectedItem != null)
             {
-                Country selectedCountry = (Country)pkrRegions.SelectedItem;
-                await Navigation.PushAsync(new ResultPage(selectedCountry));
-                pkrRegions.SelectedItem = null;
-                //await Navigation.PushAsync(new ResultPage((RegionCountry)pkrRegions.ItemsSource[pkrRegions.SelectedIndex]));
+                await Navigation.PushAsync(new ResultPage((Country)pkrRegions.ItemsSource[pkrRegions.SelectedIndex]));
             }
         }
 

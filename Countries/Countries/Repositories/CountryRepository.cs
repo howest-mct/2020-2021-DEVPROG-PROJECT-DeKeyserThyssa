@@ -101,7 +101,7 @@ namespace Countries.Repositories
         }
 
         //5: Region opvragen
-        public static async Task<Country> GetRegion()
+        public static async Task<RegionGroup> GetRegion()
         {
             using (HttpClient client = await GetClient())
             {
@@ -109,7 +109,7 @@ namespace Countries.Repositories
                 string json = await client.GetStringAsync(url);
                 if (json != null)
                 {
-                    Country regionName = JsonConvert.DeserializeObject<Country>(json);
+                    RegionGroup regionName = JsonConvert.DeserializeObject<RegionGroup>(json);
                     return regionName;
                 }
                 else

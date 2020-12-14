@@ -5,12 +5,12 @@
     <ContentPage.Content>
         <StackLayout BackgroundColor="AliceBlue">
             <Label x:Name="lblRegionName" Text="Loading..." FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="Center" Padding="0,15,0,15" TextColor="DarkSlateBlue"></Label>
-            <!--<Grid>
+            <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"/>
                 </Grid.RowDefinitions>
                 <Label Grid.Row="0" x:Name="lblCountryName" Text="(CountryName)" TextColor="Black" Padding="0,0,10,0" />
-            </Grid>-->
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

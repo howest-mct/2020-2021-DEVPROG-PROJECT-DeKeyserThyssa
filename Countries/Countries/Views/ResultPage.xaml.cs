@@ -26,8 +26,8 @@ namespace Countries.Views
 
         private void ShowCountries()
         {
-            lblRegionName.Text = DetailRegion.Region;
-            //lblCountryName.Text = DetailRegion.Name;
+            lblRegionName.Text = DetailRegion.Name;
+            lblCountryName.Text = DetailRegion.Name;
 
         }
     }

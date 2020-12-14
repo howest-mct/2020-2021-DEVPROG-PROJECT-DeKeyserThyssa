@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Countries.Models
 {
-    public class Country
+    public class Country : IComparable<Country>
     {
         [JsonProperty(PropertyName = "name")]
         public String Name { get; set; }
@@ -23,12 +23,13 @@ namespace Countries.Models
         public List<String> Timezones { get; set; }
         [JsonProperty(PropertyName = "borders")]
         public List<String> Borders { get; set; }
-        //[JsonProperty(PropertyName = "currencies")]
-        //public String Currencies { get; set; }
-        //[JsonProperty(PropertyName = "languages")]
-        //public List<String> Languages { get; set; }
         [JsonProperty(PropertyName = "alpha3Code")]
         public String ImgCode { get; set; }
+
+        public int CompareTo(Country other)
+        {
+            return Region.CompareTo(other.Region);
+        }
 
         public List<LanguageCountry> LanguageName { get; set; }
 

@@ -17,7 +17,6 @@ namespace Countries
         public MainPage()
         {
             InitializeComponent();
-            //TestModels();
             LoadCountries();
 
             TapGestureRecognizer tapGestureRecognizer = new TapGestureRecognizer();
@@ -28,13 +27,6 @@ namespace Countries
         private async void LoadCountries()
         {
             lvwCountries.ItemsSource = await CountryRepository.GetAllCountries();
-        }
-
-        private async void TestModels()
-        {
-            Debug.WriteLine("Test models");
-            List<Country> countries = await CountryRepository.GetAllCountries();
-            Debug.WriteLine("Count Countries: " + countries.Count);
         }
 
         private void lvwCountries_ItemSelected(object sender, SelectedItemChangedEventArgs e)
