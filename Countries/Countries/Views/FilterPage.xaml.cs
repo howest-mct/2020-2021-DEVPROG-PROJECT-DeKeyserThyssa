@@ -17,24 +17,26 @@ namespace Countries.Views
         public FilterPage()
         {
             InitializeComponent();
-            Filter();
+            //TestModels();
+            LoadRegions();
 
             TapGestureRecognizer tapGestureRecognizer = new TapGestureRecognizer();
             tapGestureRecognizer.Tapped += TapGestureRecognizer_Tapped;
             frmAllCountries.GestureRecognizers.Add(tapGestureRecognizer);
         }
 
-        private async Task Filter()
+        private async void LoadRegions()
         {
-            RegionGroup regionGroup = await CountryRepository.GetRegion();
-            regionGroup.RegionFilter.Sort();
-            pkrRegions.ItemsSource = regionGroup.RegionFilter;
+            lvwRegions.ItemsSource = await CountryRepository.GetRegions();
         }
-        private async void Button_OnPressed(object sender, EventArgs e)
+
+        private void lvwRegions_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            if (pkrRegions.SelectedItem != null)
+            if (lvwRegions.SelectedItem != null)
             {
-                await Navigation.PushAsync(new ResultPage((Country)pkrRegions.ItemsSource[pkrRegions.SelectedIndex]));
+                Country selected = (Country)lvwRegions.SelectedItem;
+                Navigation.PushAsync(new ResultPage(selected));
+                lvwRegions.SelectedItem = null;
             }
         }
 
@@ -42,5 +44,6 @@ namespace Countries.Views
         {
             Navigation.PushAsync(new MainPage());
         }
+
     }
 }

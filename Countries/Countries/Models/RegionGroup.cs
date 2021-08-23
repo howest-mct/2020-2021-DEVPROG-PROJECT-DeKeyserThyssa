@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,6 +7,7 @@ namespace Countries.Models
 {
     public class RegionGroup
     {
-        public List<Country> RegionFilter { get; set; }
+        [JsonProperty(PropertyName = "region")]
+        public String Region { get; set; }
     }
 }

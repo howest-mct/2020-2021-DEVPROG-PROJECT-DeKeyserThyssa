@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -60,48 +61,8 @@ namespace Countries.Repositories
             }
         }
 
-
-        //3: Language opvragen
-        public static async Task<LanguageCountry> GetLanguages(String name)
-        {
-            using (HttpClient client = await GetClient())
-            {
-                string url = "https://restcountries.eu/rest/v2/name/{name}";
-                string json = await client.GetStringAsync(url);
-                if (json != null)
-                {
-                    LanguageCountry language = JsonConvert.DeserializeObject<LanguageCountry>(json);
-                    return language;
-                }
-                else
-                {
-                    return null;
-                }
-            }
-        }
-
-        //4: Currency opvragen
-        public static async Task<CurrencyCountry> GetCurrencies(String name)
-        {
-            //HttpClient nodig --> tussenpersoon die de API-call verzort
-            using (HttpClient client = await GetClient())
-            {
-                string url = "https://restcountries.eu/rest/v2/name/{name}";
-                string json = await client.GetStringAsync(url);
-                if (json != null)
-                {
-                    CurrencyCountry currencies = JsonConvert.DeserializeObject<CurrencyCountry>(json);
-                    return currencies;
-                }
-                else
-                {
-                    return null;
-                }
-            }
-        }
-
         //5: Region opvragen
-        public static async Task<RegionGroup> GetRegion()
+        public static async Task<List<Country>> GetRegions()
         {
             using (HttpClient client = await GetClient())
             {
@@ -109,7 +70,7 @@ namespace Countries.Repositories
                 string json = await client.GetStringAsync(url);
                 if (json != null)
                 {
-                    RegionGroup regionName = JsonConvert.DeserializeObject<RegionGroup>(json);
+                    List<Country> regionName = JsonConvert.DeserializeObject<List<Country>>(json);
                     return regionName;
                 }
                 else
@@ -118,5 +79,24 @@ namespace Countries.Repositories
                 }
             }
         }
+
+        public static async Task<List<Country>> GetListsCountries(String region)
+        {
+            using (HttpClient client = await GetClient())
+            {
+                string url = "https://restcountries.eu/rest/v2/all?fields=region"; //zie API
+                string json = await client.GetStringAsync(url);
+                if (json != null)
+                {
+                    List<Country> countryLists = JsonConvert.DeserializeObject<List<Country>>(json);
+                    return countryLists;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
+
     }
 }

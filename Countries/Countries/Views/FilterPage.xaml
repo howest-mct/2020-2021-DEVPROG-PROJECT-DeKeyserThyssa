@@ -2,14 +2,36 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Countries.Views.FilterPage">
+
     <ContentPage.Content>
-        <StackLayout BackgroundColor="AliceBlue" Padding="30 " >
-            <Label Text="Please select your Region" FontSize="16" FontAttributes="Bold" />
-            <Picker x:Name="pkrRegions" ItemDisplayBinding="{Binding Region}" Title="Region"/>
-            <Button Text="Search countries" Pressed="Button_OnPressed"></Button>
-            <Frame x:Name="frmAllCountries" Grid.Row="0" Padding="10" Margin="0" OutlineColor="DarkSlateBlue" BackgroundColor="AliceBlue">
-                <Label Text="Get all countries" TextColor="DarkSlateBlue" FontSize="Large" FontAttributes="Bold" VerticalOptions="Center" Margin="5,0" />
-            </Frame>
+        <StackLayout BackgroundColor="AliceBlue">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="1" Text="Regions" FontSize="Large" TextColor="DarkSlateBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                <ListView Grid.Row="3" x:Name="lvwRegions" SeparatorColor="AliceBlue" ItemSelected="lvwRegions_ItemSelected" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="45" />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="1" Text="{Binding Region}" TextColor="Black" VerticalOptions="Center" />
+                                </Grid>
+                            </ViewCell>
+
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Frame x:Name="frmAllCountries" Grid.Row="2" Padding="10" Margin="10" OutlineColor="DarkSlateBlue" BackgroundColor="AliceBlue">
+                    <Label Text="Get all countries" TextColor="DarkSlateBlue" FontSize="Medium" FontAttributes="Bold" VerticalOptions="Center" Margin="5,0" />
+                </Frame>
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

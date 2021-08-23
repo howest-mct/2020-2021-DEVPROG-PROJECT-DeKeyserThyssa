@@ -1,4 +1,5 @@
 ﻿using Countries.Models;
+using Countries.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,20 +16,17 @@ namespace Countries.Views
     {
         public Country DetailRegion { get; set; }
 
-        public ResultPage(Country countryRegion)
+        public ResultPage(Country regionName)
         {
             InitializeComponent();
-            this.DetailRegion = countryRegion;
-            ShowCountries();
+            this.DetailRegion = regionName;
+            ShowCountriesFromRegion();
         }
 
-
-
-        private void ShowCountries()
+        private async void ShowCountriesFromRegion()
         {
-            lblRegionName.Text = DetailRegion.Name;
-            lblCountryName.Text = DetailRegion.Name;
-
+            lblRegion.Text = DetailRegion.Region;
+            lblName.Text = DetailRegion.Name;
         }
     }
 }
